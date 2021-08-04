@@ -21,15 +21,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('posts', 'PostController');
+// Route::get('/posts','PostController@index')->name('posts.index');
+// //　->name('posts.index')　ルーティングに対する名前
 
-Route::get('/posts','PostController@index')->name('posts.index');
-//　->name('posts.index')　ルーティングに対する名前
+// Route::get('/posts/create', 'PostController@create')->name('posts.create');
 
-Route::get('/posts/create', 'PostController@create')->name('posts.create');
+// // Route::get('/posts/edit', function () {
+// //     return view('posts.edit');
+// // });
+// Route::get('/posts/{post}/show', 'PostController@edit')->name('posts.edit');
+// Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
+// Route::post('/posts', 'PostController@store')->name('posts.store');
 
-// Route::get('/posts/edit', function () {
-//     return view('posts.edit');
-// });
-Route::get('/posts/{post}/show', 'PostController@edit')->name('posts.edit');
-Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
-Route::post('/posts', 'PostController@store')->name('posts.store');
+// Route::put('/posts/{post}', 'PostController@update')->name('posts.update');
+
+// Route::delete('/posts/{post}', 'PostController@destroy')->name('posts.destroy');
